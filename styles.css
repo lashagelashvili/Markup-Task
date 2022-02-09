@@ -1,16 +1,32 @@
+@font-face {
+  font-family: bpg;
+  src: url(fonts/bpg_web_001_caps.ttf);
+}
+
+@font-face {
+  font-family: bpg_glaho;
+  src: url(fonts/bpg_web_glaho_caps.ttf);
+}
+
+@font-face {
+  font-family: sylfaen;
+  src: url(fonts/Sylfaen.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .header {
-  width: 1920px;
   background-color: #00b15d;
   height: 110px;
   position: relative;
 }
 
 .contact {
+  font-family: bpg_glaho;
   background: #f4f4f4;
   height: 37px;
   position: absolute;
@@ -34,12 +50,14 @@
   display: flex;
   width: 140px;
   align-items: center;
+  line-height: 22px;
 }
 
 .account-search {
   display: flex;
   align-items: center;
   width: 140px;
+  line-height: 22px;
 }
 
 .icon {
@@ -50,9 +68,11 @@
   display: flex;
   align-items: center;
   width: 140px;
+  line-height: 22px;
 }
 
 .navbar {
+  font-family: bpg;
   position: absolute;
   width: 100%;
   height: 73px;
@@ -70,6 +90,7 @@
 
 .left-nav {
   position: absolute;
+  background-color: #00b15d;
   height: 73px;
   width: 375px;
   z-index: 2;
@@ -78,6 +99,8 @@
 .right-nav {
   display: flex;
   align-items: center;
+  background-color: #00b15d;
+
   position: absolute;
   left: 550px;
   height: 100%;
@@ -134,6 +157,12 @@
   align-items: center;
 }
 
+.cart-name {
+  font-style: bpg;
+  font-size: 10px;
+  width: 100px;
+}
+
 .cart-amount {
   margin-left: 10px;
   color: white;
@@ -144,6 +173,8 @@
 }
 
 .menu {
+  font-family: bpg;
+
   position: absolute;
   top: 110px;
   margin-left: 400px;
@@ -152,6 +183,10 @@
   list-style: none;
   align-items: center;
   font-size: 14px;
+}
+
+.main-background {
+  width: 100%;
 }
 
 .menu li {
@@ -174,6 +209,8 @@
 }
 
 .heading {
+  font-weight: normal;
+  font-family: bpg;
   width: 100%;
   text-align: center;
   font-size: 28px;
@@ -246,6 +283,8 @@
 }
 
 .catalogue-header {
+  font-weight: normal;
+  font-family: bpg;
   text-align: center;
   margin-top: 50px;
 }
@@ -278,12 +317,31 @@
   position: relative;
 }
 
-.catalogue-img:hover ~ .catalogue-hover {
+.hover-container:hover .catalogue-hover {
   opacity: 1;
 }
 
 .catalogue-hover {
   opacity: 0;
+}
+
+.catalogue-backdrop {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.catalogue-border {
+  position: absolute;
+  margin: 10px;
+  bottom: 0;
+  right: 0;
+  border: 1px solid #00b15d;
+  left: 0;
+  top: 0;
 }
 
 .hover-button {
@@ -305,17 +363,25 @@
 }
 
 .catalogue-description {
+  font-size: 18px;
   width: 350px;
   padding-top: 15px;
   color: #737373;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
 }
 
 .catalogue-name {
+  font-family: bpg;
+  font-style: normal;
+  font-weight: normal;
   padding-top: 15px;
 }
 
 .hover-container {
   position: relative;
+  display: flex;
 }
 
 .steps-container {
@@ -338,19 +404,36 @@
   box-shadow: 25px -25px 0px 0px #00b15d;
 }
 
-.flex-img:hover {
-  box-shadow: 25px -25px 0px 0px #000000;
+.card:hover {
   cursor: pointer;
   margin-top: -30px;
+  margin-bottom: 30px;
 }
 
-.flex-img:hover + span.number {
-  padding-top: -30px;
-  color: #00b15d;
+.card:hover .flex-img {
+  box-shadow: 25px -25px 0px 0px #000000;
+}
+
+.card:hover .number {
+  background-color: #00b15d;
 }
 
 .flex-heading {
   padding-top: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: bpg;
+  line-height: 24px;
+}
+
+.flex-description {
+  text-align: right;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #737373;
 }
 
 .number {
@@ -361,6 +444,8 @@
   border-radius: 10px 0px;
   font-size: 28px;
   color: #ffffff;
+  text-align: center;
+  line-height: 50px;
 }
 
 .ad {
@@ -404,7 +489,7 @@
   position: absolute;
   z-index: 2;
   top: 15%;
-  left: 25%;
+  left: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,6 +499,9 @@
 .advertisement-heading {
   color: white;
   font-size: 28px;
+  font-family: bpg;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .advertisement-button {
@@ -433,12 +521,13 @@
   height: 540px;
   margin-top: 190px;
   width: 100%;
-  background-color: grey;
+  background-color: black;
+  opacity: 0.9;
   display: flex;
   position: relative;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .footer-left {
@@ -456,6 +545,15 @@
   row-gap: 15px;
 }
 
+.footer-heading {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: white;
+  font-family: bpg_glaho;
+}
+
 .footer-right {
   width: 260px;
   display: flex;
@@ -466,26 +564,40 @@
 .footer-middle span {
   font-size: 18px;
   color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-family: sylfaen;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .footer-right span {
   font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: sylfaen;
+  font-size: 18px;
   color: white;
+  line-height: 20px;
 }
 
 .email-header {
-  color: white;
+  font-family: bpg_glaho;
+  font-style: normal;
+  font-weight: normal;
   font-size: 18px;
+  color: white;
 }
 
 .email-input {
-  background: url(/images/email-icon.png) no-repeat right;
+  background: url(images/email-icon.png) no-repeat right;
   background-color: white;
   border: none;
   background-position: 95%;
   height: 47px;
   width: 270px;
   font-size: 16px;
+  padding: 8px;
 }
 
 .socials {
@@ -501,6 +613,9 @@
 }
 
 .socials-header {
+  font-family: bpg_glaho;
+  font-style: normal;
+  font-weight: normal;
   font-size: 18px;
   color: white;
 }
@@ -532,5 +647,6 @@
 }
 
 .copyright {
-  margin-top: 110px;
+  margin-top: 30px;
+  color: white;
 }
